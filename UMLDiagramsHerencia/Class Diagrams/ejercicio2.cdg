@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicio2">
+  <ClassDiagramComponents>
+    <Class name="Electrodomestico" package="" visibility="public" isAbstract="true" xPosition="206.0" yPosition="38.0">
+      <Fields>
+        <Field name="precio" type="double" visibility="protected"/>
+        <Field name="color" type="Color" visibility="protected"/>
+        <Field name="consumoEnergetico" type="Letra" visibility="protected"/>
+        <Field name="peso" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="elegirConsumoEnergetico" returnType="Letra" visibility="private"/>
+        <Method name="elegirColor" returnType="Color" visibility="private"/>
+        <Method name="crearElectrodomestico" returnType="Electrodomestico" visibility="protected"/>
+        <Method name="calcularPrecioFinal" returnType="double" visibility="private">
+          <Argument type="char" name="consumoEnergetico"/>
+          <Argument type="double" name="peso"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lavadora" package="" visibility="public" xPosition="7.0" yPosition="309.0">
+      <Fields>
+        <Field name="carga" type="double" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearLavadora" returnType="Lavadora" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Televisor" package="" visibility="public" xPosition="487.0" yPosition="328.0">
+      <Fields>
+        <Field name="resolucionEnPulgadas" type="double" visibility="private"/>
+        <Field name="tieneSintonizadorTdt" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearTelevisor" returnType="Televisor" visibility="public"/>
+        <Method name="elegirSiTieneSintonizadorLaTelevesion" returnType="boolean" visibility="private"/>
+      </Methods>
+    </Class>
+    <Enum name="Color" package="" visibility="public" xPosition="634.0" yPosition="38.0">
+      <Literals>
+        <Literal name="BLANCO(&quot;blanco&quot;)"/>
+        <Literal name="NEGRO(&quot;negro&quot;)"/>
+        <Literal name="ROJO(&quot;rojo&quot;)"/>
+        <Literal name="AZUL(&quot;azul&quot;)"/>
+        <Literal name="GRIS(&quot;gris&quot;)"/>
+      </Literals>
+    </Enum>
+    <Enum name="Letra" package="" visibility="public" xPosition="7.0" yPosition="38.0">
+      <Literals>
+        <Literal name="A('A')"/>
+        <Literal name="B('B')"/>
+        <Literal name="C('C')"/>
+        <Literal name="D('D')"/>
+        <Literal name="E('E')"/>
+        <Literal name="F('F')"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Usa" source="Electrodomestico" target="Letra" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Usa" source="Electrodomestico" target="Color" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Televisor" target="Electrodomestico"/>
+    <IsRelation name="is" source="Lavadora" target="Electrodomestico"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
