@@ -2,7 +2,7 @@
 
 <ClassDiagram name="ejercicio2">
   <ClassDiagramComponents>
-    <Class name="Electrodomestico" package="" visibility="public" isAbstract="true" xPosition="206.0" yPosition="38.0">
+    <Class name="Electrodomestico" package="" visibility="public" xPosition="206.0" yPosition="38.0">
       <Fields>
         <Field name="precio" type="double" visibility="protected"/>
         <Field name="color" type="Color" visibility="protected"/>
@@ -25,9 +25,7 @@
         <Field name="carga" type="double" visibility="private"/>
       </Fields>
       <Constructors/>
-      <Methods>
-        <Method name="crearLavadora" returnType="Lavadora" visibility="public"/>
-      </Methods>
+      <Methods/>
     </Class>
     <Class name="Televisor" package="" visibility="public" xPosition="487.0" yPosition="328.0">
       <Fields>
@@ -36,7 +34,6 @@
       </Fields>
       <Constructors/>
       <Methods>
-        <Method name="crearTelevisor" returnType="Televisor" visibility="public"/>
         <Method name="elegirSiTieneSintonizadorLaTelevesion" returnType="boolean" visibility="private"/>
       </Methods>
     </Class>
@@ -61,9 +58,9 @@
     </Enum>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="Usa" source="Electrodomestico" target="Letra" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
-    <HasRelation name="Usa" source="Electrodomestico" target="Color" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="Televisor" target="Electrodomestico"/>
+    <HasRelation name="Usa" source="Electrodomestico" target="Color" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Usa" source="Electrodomestico" target="Letra" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
     <IsRelation name="is" source="Lavadora" target="Electrodomestico"/>
   </ClassDiagramRelations>
 </ClassDiagram>

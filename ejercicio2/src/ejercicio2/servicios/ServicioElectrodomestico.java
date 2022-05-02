@@ -56,11 +56,9 @@ public class ServicioElectrodomestico {
 
     }
 
-    public void crearElectrodomestico() {
+    protected Electrodomestico crearElectrodomestico() {
 
-        // No se porque, si pongo esas llaves finales en la instancia, me permite crear Electrodomestico.
-        Electrodomestico electrodomestico = new Electrodomestico() {
-        };
+        Electrodomestico electrodomestico = new Electrodomestico();
 
         double precio, peso;
         Color color;
@@ -79,6 +77,8 @@ public class ServicioElectrodomestico {
         precio = calcularPrecioFinal(consumoEnergetico.getLetra(), peso);
         electrodomestico.setprecio(precio);
 
+        return electrodomestico;
+        
     }
 
     private double calcularPrecioFinal(char consumoEnergetico, double peso) {

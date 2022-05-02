@@ -3,7 +3,7 @@ package ejercicio2.entidades;
 import ejercicio2.enumeraciones.Color;
 import ejercicio2.enumeraciones.Letra;
 
-public abstract class Electrodomestico {
+public class Electrodomestico {
 
     protected double precio;
     protected Color color;

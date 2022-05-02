@@ -2,18 +2,13 @@ package ejercicio2.entidades;
 
 import ejercicio2.enumeraciones.Color;
 import ejercicio2.enumeraciones.Letra;
-import ejercicio2.servicios.ServicioElectrodomestico;
 
 public class Televisor extends Electrodomestico {
 
     private double resolucionEnPulgadas;
     private boolean tieneSintonizadorTdt;
-
-    // No funciona lo que puse adentro del constructor vacio.
     
     public Televisor() {
-        ServicioElectrodomestico servicio = new ServicioElectrodomestico();
-        servicio.crearElectrodomestico();
     }
 
     public Televisor(double resolucionEnPulgadas, boolean tieneSintonizadorTdt, double precio, Color color, Letra consumoEnergetico, double pesoEnKg) {

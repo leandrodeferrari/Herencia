@@ -2,7 +2,9 @@
 package ejercicio2;
 
 import ejercicio2.entidades.Lavadora;
+import ejercicio2.entidades.Televisor;
 import ejercicio2.servicios.ServicioLavadora;
+import ejercicio2.servicios.ServicioTelevisor;
 
 public class Ejercicio2 {
 
@@ -87,9 +89,11 @@ public class Ejercicio2 {
         // Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios para mostrar 
         // el precio final de los dos electrodomésticos. 
         
-        ServicioLavadora servicio = new ServicioLavadora();
-        Lavadora lavadora = servicio.crearLavadora();
-        
+        ServicioLavadora servicioLavadora = new ServicioLavadora();
+        Lavadora lavadora = servicioLavadora.crearElectrodomestico();
+        System.out.println("");
+        ServicioTelevisor servicioTelevisor = new ServicioTelevisor();
+        Televisor televisor = servicioTelevisor.crearElectrodomestico();
         
     }
 

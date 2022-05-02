@@ -1,21 +1,25 @@
 package ejercicio2.servicios;
 
+import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Televisor;
-import java.util.Scanner;
 
-public class ServicioTelevisor {
+public class ServicioTelevisor extends ServicioElectrodomestico {
 
-    Scanner leer = new Scanner(System.in).useDelimiter("\n");
+    @Override
+    public Televisor crearElectrodomestico() {
 
-    public Televisor crearTelevisor() {
-
-        Televisor televisor = new Televisor();
+        ServicioElectrodomestico servicioElectrodomestico = new ServicioElectrodomestico();
+        Electrodomestico electrodomestico = servicioElectrodomestico.crearElectrodomestico();
+        double resolucionDePulgadas;
+        boolean tieneSintonizadorTdt;
 
         System.out.println("Ingrese cuánta resolución, en pulgadas, posee el televisor");
-        televisor.setResolucionEnPulgadas(leer.nextDouble());
+        resolucionDePulgadas = leer.nextDouble();
 
-        televisor.setTieneSintonizadorTdt(elegirSiTieneSintonizadorLaTelevesion());
-        
+        tieneSintonizadorTdt = elegirSiTieneSintonizadorLaTelevesion();
+
+        Televisor televisor = new Televisor(resolucionDePulgadas, tieneSintonizadorTdt, electrodomestico.getPrecio(), electrodomestico.getColor(), electrodomestico.getConsumoEnergetico(), electrodomestico.getPesoEnKg());
+
         System.out.println(televisor);
 
         return televisor;

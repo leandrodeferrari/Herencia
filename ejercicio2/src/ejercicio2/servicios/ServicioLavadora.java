@@ -1,24 +1,27 @@
 package ejercicio2.servicios;
 
 
+import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Lavadora;
-import java.util.Scanner;
 
-public class ServicioLavadora {
+public class ServicioLavadora extends ServicioElectrodomestico{
 
-    Scanner leer = new Scanner(System.in).useDelimiter("\n");
-    
-    public Lavadora crearLavadora() {
+    @Override
+    public Lavadora crearElectrodomestico(){
         
-        Lavadora lavadora = new Lavadora();
+        ServicioElectrodomestico servicioElectrodomestico = new ServicioElectrodomestico();
+        Electrodomestico electrodomestico = servicioElectrodomestico.crearElectrodomestico();
+        double carga;
         
         System.out.println("Ingrese cuánta carga posee la lavadora");
-        lavadora.setCarga(leer.nextDouble());
-                
+        carga = leer.nextDouble();
+        
+        Lavadora lavadora = new Lavadora(electrodomestico.getPrecio(), carga, electrodomestico.getColor(), electrodomestico.getConsumoEnergetico(), electrodomestico.getPesoEnKg());
+        
         System.out.println(lavadora);
         
         return lavadora;
-
+        
     }
-
+    
 }
