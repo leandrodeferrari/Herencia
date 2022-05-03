@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ServicioElectrodomestico {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
-
+    
     private Letra elegirConsumoEnergetico() {
 
         int opcion;
@@ -157,5 +157,5 @@ public class ServicioElectrodomestico {
         return precioSegunPeso;
 
     }
-
+    
 }

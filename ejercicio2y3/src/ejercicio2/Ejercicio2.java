@@ -1,15 +1,19 @@
-
 package ejercicio2;
 
+import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Lavadora;
 import ejercicio2.entidades.Televisor;
 import ejercicio2.servicios.ServicioLavadora;
 import ejercicio2.servicios.ServicioTelevisor;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Ejercicio2 {
 
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
+
     public static void main(String[] args) {
-        
+
         // 2. Crear una superclase llamada Electrodoméstico con los siguientes atributos: 
         // precio, color, consumo energético (letras entre A y F) y peso. 
         //
@@ -88,13 +92,143 @@ public class Ejercicio2 {
         //
         // Vamos a crear una Lavadora y un Televisor y llamar a los métodos necesarios para mostrar 
         // el precio final de los dos electrodomésticos. 
+        //
+        // 3. Siguiendo el ejercicio anterior, en el main vamos a crear un ArrayList de 
+        // Electrodomésticos para guardar 4 electrodomésticos, ya sean lavadoras o televisores, 
+        // con valores ya asignados.
+        // Luego, recorrer este array y ejecutar el método precioFinal() en cada electrodoméstico. 
+        // Se deberá también mostrar el precio de cada tipo de objeto, es decir, el precio de todos 
+        // los televisores y el de las lavadoras. Una vez hecho eso, también deberemos mostrar, la 
+        // suma del precio de todos los Electrodomésticos. Por ejemplo, si tenemos una lavadora con 
+        // un precio de 2000 y un televisor de 5000, el resultado final será de 7000 (2000+5000) 
+        // para electrodomésticos, 2000 para lavadora y 5000 para televisor.
         
-        ServicioLavadora servicioLavadora = new ServicioLavadora();
-        Lavadora lavadora = servicioLavadora.crearElectrodomestico();
-        System.out.println("");
-        ServicioTelevisor servicioTelevisor = new ServicioTelevisor();
-        Televisor televisor = servicioTelevisor.crearElectrodomestico();
-        
+        double precioTotal, precioTotalDeLavoras, precioTotalDeTelevisores;
+        ArrayList<Electrodomestico> listaDe4Electrodomesticos = Ejercicio2.crearListaDe4Electrodomesticos();
+
+        Ejercicio2.mostrarPreciosDeElectrodomesticos(listaDe4Electrodomesticos);
+
+        precioTotal = Ejercicio2.calcularPrecioTotalDe4Electrodomesticos(listaDe4Electrodomesticos);
+        System.out.println("El precio total de los 4 electrodomésticos es: " + precioTotal);
+
+        precioTotalDeLavoras = calcularPrecioDeLasLavadoras(listaDe4Electrodomesticos);
+        System.out.println("Precio total de Lavadoras: " + precioTotalDeLavoras);
+
+        precioTotalDeTelevisores = calcularPrecioDeTelevisores(listaDe4Electrodomesticos);
+        System.out.println("Precio total de Televisores: " + precioTotalDeTelevisores);
+
+    }
+
+    public static ArrayList crearListaDe4Electrodomesticos() {
+
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+
+        ArrayList<Electrodomestico> listaDe4Electrodomesticos = new ArrayList();
+        int opcion;
+
+        for (int i = 0; i < 4; i++) {
+
+            System.out.println("Ingrese el electrodoméstico que desea agregar");
+            System.out.println("(Si ingresa una opción incorrecta, se eligirá la opcion 2)");
+            System.out.println("1. Lavadora");
+            System.out.println("2. Televisor");
+            opcion = leer.nextInt();
+
+            if (opcion < 1 || opcion > 2) {
+
+                opcion = 2;
+
+            }
+
+            switch (opcion) {
+
+                case 1:
+
+                    ServicioLavadora servicioLavadora = new ServicioLavadora();
+                    Lavadora lavadora = servicioLavadora.crearElectrodomestico();
+                    listaDe4Electrodomesticos.add(lavadora);
+                    break;
+
+                case 2:
+
+                    ServicioTelevisor servicioTelevisor = new ServicioTelevisor();
+                    Televisor televisor = servicioTelevisor.crearElectrodomestico();
+                    listaDe4Electrodomesticos.add(televisor);
+                    break;
+            }
+
+            System.out.println();
+
+        }
+
+        return listaDe4Electrodomesticos;
+
+    }
+
+    public static void mostrarPreciosDeElectrodomesticos(ArrayList<Electrodomestico> listaDe4Electromesticos) {
+
+        for (Electrodomestico electrodomestico : listaDe4Electromesticos) {
+
+            if (electrodomestico instanceof Lavadora) {
+
+                System.out.println("Lavadora: " + electrodomestico.getPrecio());
+
+            } else {
+
+                System.out.println("Televisor: " + electrodomestico.getPrecio());
+
+            }
+
+        }
+
+    }
+
+    public static double calcularPrecioTotalDe4Electrodomesticos(ArrayList<Electrodomestico> listaDe4Electromesticos) {
+
+        double precioTotal = 0;
+
+        for (Electrodomestico electromestico : listaDe4Electromesticos) {
+
+            precioTotal += electromestico.getPrecio();
+
+        }
+
+        return precioTotal;
+
+    }
+
+    public static double calcularPrecioDeLasLavadoras(ArrayList<Electrodomestico> listaDe4Electromesticos) {
+
+        double precioTotalDeLavadoras = 0;
+
+        for (Electrodomestico electromestico : listaDe4Electromesticos) {
+
+            if (electromestico instanceof Lavadora) {
+                precioTotalDeLavadoras += electromestico.getPrecio();
+
+            }
+
+        }
+
+        return precioTotalDeLavadoras;
+
+    }
+
+    public static double calcularPrecioDeTelevisores(ArrayList<Electrodomestico> listaDe4Electromesticos) {
+
+        double precioTotalDeTelevisores = 0;
+
+        for (Electrodomestico electromestico : listaDe4Electromesticos) {
+
+            if (electromestico instanceof Televisor) {
+                precioTotalDeTelevisores += electromestico.getPrecio();
+
+            }
+
+        }
+
+        return precioTotalDeTelevisores;
+
     }
 
 }
