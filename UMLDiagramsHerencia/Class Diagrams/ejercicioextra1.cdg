@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicioextra1">
+  <ClassDiagramComponents>
+    <Class name="AlquilerDeAmarres" package="" visibility="public" xPosition="319.0" yPosition="15.0">
+      <Fields>
+        <Field name="nombreDelCliente" type="String" visibility="private"/>
+        <Field name="dniCliente" type="Integer" visibility="private"/>
+        <Field name="fechaDeInicio" type="Date" visibility="private"/>
+        <Field name="fechaDeDevolucion" type="Date" visibility="private"/>
+        <Field name="posicionDelAmarre" type="String" visibility="private"/>
+        <Field name="transporte" type="TransporteMaritimo" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearAlquiler" returnType="Alquiler" visibility="public"/>
+        <Method name="crearTransporteDelAlquiler" returnType="TransporteMaritimo" visibility="private">
+          <Argument type="int" name="opcion"/>
+        </Method>
+        <Method name="calcularAlquilerBase" returnType="double" visibility="public">
+          <Argument type="double" name="esloraEnMetros"/>
+          <Argument type="int" name="diasEntreFechas"/>
+        </Method>
+        <Method name="calculcarDiasEntreFechas" returnType="int" visibility="public">
+          <Argument type="Date" name="fechaDeInicio"/>
+          <Argument type="Date" name="fechaDeDevolucion"/>
+        </Method>
+        <Method name="calculcarPrecioAlquilerSegunTransporte" returnType="double" visibility="public">
+          <Argument type="TransporteMaritimo" name="transporte"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="TransporteMaritimo" package="" visibility="public" xPosition="50.0" yPosition="38.0">
+      <Fields>
+        <Field name="matricula" type="Integer" visibility="protected"/>
+        <Field name="esloraEnMetros" type="double" visibility="protected"/>
+        <Field name="anioDeFabricacion" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearTransporte" returnType="TransporteMaritimo" visibility="protected"/>
+      </Methods>
+    </Class>
+    <Class name="Velero" package="" visibility="public" xPosition="3.0" yPosition="231.0">
+      <Fields>
+        <Field name="numeroDeMastiles" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="BarcoMotorizado" package="" visibility="public" xPosition="185.0" yPosition="333.0">
+      <Fields>
+        <Field name="potenciaEnCv" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="YateDeLujo" package="" visibility="public" xPosition="50.0" yPosition="465.0">
+      <Fields>
+        <Field name="numeroDeCamarotes" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Interface name="Menu" package="" visibility="public" xPosition="454.0" yPosition="400.0">
+      <Methods>
+        <Method name="crearMenuDeAlquilerDeAmarres" returnType="void" visibility="public"/>
+        <Method name="crearMenuDeEleccionDeTransporte" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="YateDeLujo" target="BarcoMotorizado"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="AlquilerDeAmarres" target="Menu"/>
+    <HasRelation name="Usa" source="AlquilerDeAmarres" target="TransporteMaritimo" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Velero" target="TransporteMaritimo"/>
+    <IsRelation name="is" source="BarcoMotorizado" target="TransporteMaritimo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

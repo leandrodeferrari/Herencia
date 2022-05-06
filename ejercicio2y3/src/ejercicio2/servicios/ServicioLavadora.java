@@ -18,9 +18,27 @@ public class ServicioLavadora extends ServicioElectrodomestico{
         
         Lavadora lavadora = new Lavadora(electrodomestico.getPrecio(), carga, electrodomestico.getColor(), electrodomestico.getConsumoEnergetico(), electrodomestico.getPesoEnKg());
         
+        lavadora.setprecio(calcularPrecioFinal(lavadora.getConsumoEnergetico().getLetra(), lavadora.getPesoEnKg(), carga));
+        
         System.out.println(lavadora);
         
         return lavadora;
+        
+    }
+    
+    public double calcularPrecioFinal(char consumoEnergetico, double peso, double carga){
+        
+        double precioFinal;
+        
+        precioFinal = super.calcularPrecioFinal(consumoEnergetico, peso);
+        
+        if(carga>30){
+            
+            precioFinal+= 500;
+            
+        }
+        
+        return precioFinal;
         
     }
     

@@ -19,13 +19,38 @@ public class ServicioTelevisor extends ServicioElectrodomestico {
         tieneSintonizadorTdt = elegirSiTieneSintonizadorLaTelevesion();
 
         Televisor televisor = new Televisor(resolucionDePulgadas, tieneSintonizadorTdt, electrodomestico.getPrecio(), electrodomestico.getColor(), electrodomestico.getConsumoEnergetico(), electrodomestico.getPesoEnKg());
-
+        
+        televisor.setprecio(calcularPrecioFinal(televisor.getConsumoEnergetico().getLetra(), televisor.getPesoEnKg(), televisor.getResolucionEnPulgadas(), televisor.isTieneSintonizadorTdt()));
+        
         System.out.println(televisor);
 
         return televisor;
 
     }
 
+    public double calcularPrecioFinal(char ConsumoEnergetico, double peso, double resolucionEnPulgadas, boolean tieneSintonizadorTdt){
+        
+        double precioFinal;
+        
+        precioFinal = super.calcularPrecioFinal(ConsumoEnergetico, peso);
+        
+        if(resolucionEnPulgadas>40){
+            
+            precioFinal += precioFinal *0.3;
+            
+        }
+        
+        if(tieneSintonizadorTdt){
+            
+            precioFinal += 500;
+            
+        }
+        
+        
+        return precioFinal;
+        
+    }
+    
     private boolean elegirSiTieneSintonizadorLaTelevesion() {
 
         int opcion;

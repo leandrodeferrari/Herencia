@@ -74,14 +74,11 @@ public class ServicioElectrodomestico {
         peso = leer.nextDouble();
         electrodomestico.setPesoEnKg(peso);
 
-        precio = calcularPrecioFinal(consumoEnergetico.getLetra(), peso);
-        electrodomestico.setprecio(precio);
-
         return electrodomestico;
         
     }
 
-    private double calcularPrecioFinal(char consumoEnergetico, double peso) {
+    protected double calcularPrecioFinal(char consumoEnergetico, double peso) {
 
         double precioBase = 1000, precioSegunConsumo, precioSegunPeso, precioFinal;
 
@@ -95,7 +92,7 @@ public class ServicioElectrodomestico {
 
     }
 
-    private double calcularPrecioDelConsumoEnergetico(char consumoEnergetico) {
+    protected double calcularPrecioDelConsumoEnergetico(char consumoEnergetico) {
 
         double precioSegunConsumo;
 
@@ -128,7 +125,7 @@ public class ServicioElectrodomestico {
 
     }
 
-    private double calcularPrecioSegunPeso(double peso) {
+    protected double calcularPrecioSegunPeso(double peso) {
 
         double precioSegunPeso;
 
