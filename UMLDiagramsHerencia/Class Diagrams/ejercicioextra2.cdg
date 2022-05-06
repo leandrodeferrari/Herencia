@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicioextra2">
+  <ClassDiagramComponents>
+    <Class name="Edificio" package="" visibility="public" isAbstract="true" xPosition="320.0" yPosition="25.0">
+      <Fields>
+        <Field name="ancho" type="double" visibility="protected"/>
+        <Field name="alto" type="double" visibility="protected"/>
+        <Field name="largo" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calcularSuperficie" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="calcularVolumen" returnType="double" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Polideportivo" package="" visibility="public" xPosition="82.0" yPosition="301.0">
+      <Fields>
+        <Field name="nombreDelPolideportivo" type="String" visibility="private"/>
+        <Field name="tipoDeInstalacion" type="TipoDeInstalacion" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearPolideportivo" returnType="Polideportivo" visibility="public"/>
+        <Method name="elegirTipoDeInstalacion" returnType="TipoDeInstalacion" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EdificioDeOficinas" package="" visibility="public" xPosition="399.0" yPosition="301.0">
+      <Fields>
+        <Field name="numeroDeOficinas" type="int" visibility="private"/>
+        <Field name="cantidadDePersonasPorOficina" type="int" visibility="private"/>
+        <Field name="numeroDePisos" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="crearEdificioDeOficinas" returnType="EdificioDeOficinas" visibility="public"/>
+        <Method name="cantidadPersonas" returnType="int" visibility="public">
+          <Argument type="EdificioDeOficinas" name="edificioDeOficinas"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="TipoDeInstalacion" package="" visibility="public" xPosition="99.0" yPosition="67.0">
+      <Literals>
+        <Literal name="TECHADO(&quot;Techado&quot;)"/>
+        <Literal name="ABIERTO(&quot;Abierto&quot;)"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Polideportivo" target="Edificio"/>
+    <IsRelation name="is" source="EdificioDeOficinas" target="Edificio"/>
+    <HasRelation name="Usa" source="Polideportivo" target="TipoDeInstalacion" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
