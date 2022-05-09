@@ -1,6 +1,8 @@
 
 package ejercicioextra3;
 
+import ejercicioextra3.entidades.SistemaDeConsulta;
+
 public class Ejercicioextra3 {
 
     public static void main(String[] args) {
@@ -66,19 +68,9 @@ public class Ejercicioextra3 {
         // c) todos los campings con restaurante. 
         // d) todas las residencias que tienen descuento.
         
+        SistemaDeConsulta sistema = new SistemaDeConsulta();
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        sistema.ejecutarSistemaDeConsulta();
         
     }
 

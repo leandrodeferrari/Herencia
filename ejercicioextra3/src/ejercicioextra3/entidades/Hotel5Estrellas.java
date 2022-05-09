@@ -13,6 +13,13 @@ public class Hotel5Estrellas extends Hotel4Estrellas {
     public Hotel5Estrellas() {
     }
 
+    public Hotel5Estrellas(int cantidadDeSalonesDeConferencia, int cantidadDeSuites, int cantidadDeLimosinas, Hotel4Estrellas hotel4Estrellas) {
+        super(hotel4Estrellas);
+        this.cantidadDeSalonesDeConferencia = cantidadDeSalonesDeConferencia;
+        this.cantidadDeSuites = cantidadDeSuites;
+        this.cantidadDeLimosinas = cantidadDeLimosinas;
+    }
+    
     public Hotel5Estrellas(int cantidadDeSalonesDeConferencia, int cantidadDeSuites, int cantidadDeLimosinas, Gimnasio tipoDeGimnasio, String nombreDelRestaurante, int capacidadDelRestaurante, int cantidadDeHabitaciones, int numeroDeCamas, int cantidadDePisos, double precioDeHabitaciones, String nombre, String direccion, String localidad, String nombreGerente) {
         super(tipoDeGimnasio, nombreDelRestaurante, capacidadDelRestaurante, cantidadDeHabitaciones, numeroDeCamas, cantidadDePisos, precioDeHabitaciones, nombre, direccion, localidad, nombreGerente);
         this.cantidadDeSalonesDeConferencia = cantidadDeSalonesDeConferencia;
