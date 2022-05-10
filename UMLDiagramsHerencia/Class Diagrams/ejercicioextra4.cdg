@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="ejercicioextra4">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="" visibility="public" xPosition="617.0" yPosition="11.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="apellido" type="String" visibility="protected"/>
+        <Field name="numeroDeIdentificacion" type="Integer" visibility="protected"/>
+        <Field name="estadoCivil" type="EstadoCivil" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cambiarEstadoCivil" returnType="void" visibility="public">
+          <Argument type="Persona" name="persona"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Empleado" package="" visibility="public" xPosition="584.0" yPosition="213.0">
+      <Fields>
+        <Field name="anioDeIncorporacionEnLaFacultad" type="int" visibility="protected"/>
+        <Field name="numeroDeDespachoAsignado" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="cambiarDespachoAsignado" returnType="void" visibility="public">
+          <Argument type="Empleado" name="empleado"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Estudiante" package="" visibility="public" xPosition="392.0" yPosition="178.0">
+      <Fields>
+        <Field name="carreraAsignada" type="Carrera" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Profesor" package="" visibility="public" xPosition="477.0" yPosition="393.0">
+      <Fields>
+        <Field name="departamentoPerteneciente" type="Departamento" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Facultad" package="" visibility="public" xPosition="116.0" yPosition="213.0">
+      <Fields>
+        <Field name="listaDeEmpleados" type="Set&lt;Empleado&gt;" visibility="private"/>
+        <Field name="listaDeEstudiantes" type="Set&lt;Estudainte&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="PersonalDeServicio" package="" visibility="public" xPosition="813.0" yPosition="444.0">
+      <Fields>
+        <Field name="seccionAsignada" type="Seccion" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="EstadoCivil" package="" visibility="public" xPosition="930.0" yPosition="30.0">
+      <Literals>
+        <Literal name="CASADO(&quot;Casado/a&quot;)"/>
+        <Literal name="SEPARADO(&quot;Separado/a&quot;)"/>
+        <Literal name="VIUDO(&quot;Viudo/a&quot;)"/>
+        <Literal name="SOLTERO(&quot;Soltero/a&quot;)"/>
+      </Literals>
+    </Enum>
+    <Enum name="Carrera" package="" visibility="public" xPosition="90.0" yPosition="11.0">
+      <Literals>
+        <Literal name="CIENCIASMATEMATICAS(&quot;Ciencias Matemáticas&quot;)"/>
+        <Literal name="ABOGACIA(&quot;Abogacía&quot;)"/>
+        <Literal name="ENFERMERIA(&quot;Enfermería&quot;)"/>
+        <Literal name="ADMINISTRACION(&quot;Administración&quot;)"/>
+      </Literals>
+    </Enum>
+    <Enum name="Departamento" package="" visibility="public" xPosition="224.0" yPosition="370.0">
+      <Literals>
+        <Literal name="EXACTAS(&quot;Exactas&quot;)"/>
+        <Literal name="DERECHO(&quot;Derecho&quot;)"/>
+        <Literal name="MEDICINA(&quot;Medicína&quot;)"/>
+        <Literal name="ECONOMICAS(&quot;Económicas&quot;)"/>
+      </Literals>
+    </Enum>
+    <Enum name="Seccion" package="" visibility="public" xPosition="963.0" yPosition="213.0">
+      <Literals>
+        <Literal name="BIBLIOTECA(&quot;Biblioteca&quot;)"/>
+        <Literal name="DECANATO(&quot;Decanato&quot;)"/>
+        <Literal name="SECRETARIA(&quot;Secretaría&quot;)"/>
+        <Literal name="PATIO(&quot;Patio&quot;)"/>
+        <Literal name="COMEDOR(&quot;Comedor&quot;)"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene" source="Facultad" target="Estudiante" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Usa" source="Estudiante" target="Carrera" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Estudiante" target="Persona"/>
+    <IsRelation name="is" source="Empleado" target="Persona"/>
+    <HasRelation name="Usa" source="Profesor" target="Departamento" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Profesor" target="Empleado"/>
+    <HasRelation name="Tiene" source="Facultad" target="Empleado" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Usa" source="PersonalDeServicio" target="Seccion" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="Usa" source="Persona" target="EstadoCivil" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="PersonalDeServicio" target="Empleado"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
