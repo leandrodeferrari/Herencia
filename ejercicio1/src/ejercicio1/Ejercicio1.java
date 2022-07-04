@@ -1,9 +1,7 @@
 
 package ejercicio1;
 
-import ejercicio1.entidades.Caballo;
-import ejercicio1.entidades.Gato;
-import ejercicio1.entidades.Perro;
+import ejercicio1.entidades.*;
 
 public class Ejercicio1 {
 
