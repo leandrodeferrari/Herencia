@@ -1,13 +1,9 @@
 package ejercicioextra2;
 
-import ejercicioextra2.entidades.Edificio;
-import ejercicioextra2.entidades.EdificioDeOficinas;
-import ejercicioextra2.servicios.ServicioEdificioDeOficinas;
-import ejercicioextra2.servicios.ServicioPolideportivo;
-import ejercicioextra2.entidades.Polideportivo;
+import ejercicioextra2.entidades.*;
+import ejercicioextra2.servicios.*;
 import ejercicioextra2.enumeraciones.TipoDeInstalacion;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class EjercicioExtra2 {
 
@@ -69,8 +65,8 @@ public class EjercicioExtra2 {
     public static List<Edificio> crear2EdificiosDeOficinasY2Polideportivos() {
 
         List<Edificio> listaDe4Edificios = new ArrayList<>();
-        ServicioPolideportivo servicioPolideportivo = new ServicioPolideportivo();
-        ServicioEdificioDeOficinas servicioEdificioDeOficinas = new ServicioEdificioDeOficinas();
+        PolideportivoServicio servicioPolideportivo = new PolideportivoServicio();
+        EdificioDeOficinasServicio servicioEdificioDeOficinas = new EdificioDeOficinasServicio();
 
         for (int i = 0; i < 4; i++) {
 
@@ -144,7 +140,7 @@ public class EjercicioExtra2 {
 
             if (edificio instanceof EdificioDeOficinas) {
 
-                ServicioEdificioDeOficinas servicio = new ServicioEdificioDeOficinas();
+                EdificioDeOficinasServicio servicio = new EdificioDeOficinasServicio();
                 EdificioDeOficinas edificioDeOficina = (EdificioDeOficinas) edificio;
 
                 System.out.println("Cantidad de personas, que entran en el edificio de oficinas: " + servicio.cantidadPersonas(edificioDeOficina));

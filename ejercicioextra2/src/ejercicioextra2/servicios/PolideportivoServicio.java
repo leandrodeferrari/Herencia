@@ -1,12 +1,10 @@
 package ejercicioextra2.servicios;
 
-import ejercicioextra2.entidades.Edificio;
 import ejercicioextra2.entidades.Polideportivo;
 import ejercicioextra2.enumeraciones.TipoDeInstalacion;
-import java.util.List;
 import java.util.Scanner;
 
-public class ServicioPolideportivo {
+public class PolideportivoServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
