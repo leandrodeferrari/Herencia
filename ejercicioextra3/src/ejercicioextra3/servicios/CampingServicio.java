@@ -1,11 +1,9 @@
-
 package ejercicioextra3.servicios;
 
 import ejercicioextra3.entidades.Camping;
 import ejercicioextra3.entidades.ExtraHotelero;
 
-
-public class ServicioCamping extends ServicioExtraHotelero {
+public class CampingServicio extends ExtraHoteleroServicio {
 
     @Override
     public Camping crearAlojamiento(){

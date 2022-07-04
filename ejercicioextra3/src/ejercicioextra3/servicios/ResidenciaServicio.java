@@ -3,7 +3,7 @@ package ejercicioextra3.servicios;
 import ejercicioextra3.entidades.ExtraHotelero;
 import ejercicioextra3.entidades.Residencia;
 
-public class ServicioResidencia extends ServicioExtraHotelero {
+public class ResidenciaServicio extends ExtraHoteleroServicio {
 
     @Override
     public Residencia crearAlojamiento() {

@@ -1,13 +1,11 @@
-
 package ejercicioextra3.servicios;
 
 import ejercicioextra3.entidades.Hotel4Estrellas;
-import ejercicioextra3.entidades.Hotel5Estrellas;
+import ejercicioextra3.entidades.*;
 import ejercicioextra3.enumeraciones.Gimnasio;
 import ejercicioextra3.interfaces.*;
 
-
-public class ServicioHotel5Estrellas extends ServicioHotel4Estrellas implements ValorAgregadoDeLasLimosinas, ValorAgregadoDelGimnasio, ValorAgregadoDelRestaurante, IHabitacion {
+public class Hotel5EstrellasServicio extends Hotel4EstrellasServicio implements ValorAgregadoDeLasLimosinas, ValorAgregadoDelGimnasio, ValorAgregadoDelRestaurante, IHabitacion {
 
     int cantidadDeLimosinasDeHotel, cantidadDeHabitaciones;
     double precioDeHabitaciones;

@@ -3,7 +3,7 @@ package ejercicioextra3.servicios;
 import ejercicioextra3.entidades.Alojamiento;
 import java.util.Scanner;
 
-public class ServicioAlojamiento {
+public class AlojamientoServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     

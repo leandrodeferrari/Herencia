@@ -1,4 +1,3 @@
-
 package ejercicioextra3.entidades;
 
 import ejercicioextra3.servicios.*;
@@ -64,25 +63,25 @@ public class SistemaDeConsulta {
             
             case 1:
                 
-                ServicioHotel5Estrellas servicioHotel5Estrellas = new ServicioHotel5Estrellas();
+                Hotel5EstrellasServicio servicioHotel5Estrellas = new Hotel5EstrellasServicio();
                 this.alojamientoElegido = servicioHotel5Estrellas.crearAlojamiento();
                 break;
             
             case 2:
                 
-                ServicioHotel4Estrellas servicioHotel4Estrellas = new ServicioHotel4Estrellas();
+                Hotel4EstrellasServicio servicioHotel4Estrellas = new Hotel4EstrellasServicio();
                 this.alojamientoElegido = servicioHotel4Estrellas.crearAlojamiento();
                 break;
                 
             case 3:
                 
-                ServicioCamping servicioCamping = new ServicioCamping();
+                CampingServicio servicioCamping = new CampingServicio();
                 this.alojamientoElegido = servicioCamping.crearAlojamiento();
                 break;
                 
             case 4:
                 
-                ServicioResidencia servicioResidencia = new ServicioResidencia();
+                ResidenciaServicio servicioResidencia = new ResidenciaServicio();
                 this.alojamientoElegido = servicioResidencia.crearAlojamiento();
                 break;
                 

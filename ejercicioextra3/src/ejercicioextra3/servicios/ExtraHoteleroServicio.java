@@ -5,7 +5,7 @@ import ejercicioextra3.entidades.Alojamiento;
 import ejercicioextra3.entidades.ExtraHotelero;
 
 
-public class ServicioExtraHotelero extends ServicioAlojamiento {
+public class ExtraHoteleroServicio extends AlojamientoServicio {
 
     @Override
     public ExtraHotelero crearAlojamiento(){

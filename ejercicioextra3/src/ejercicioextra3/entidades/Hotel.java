@@ -1,6 +1,4 @@
-
 package ejercicioextra3.entidades;
-
 
 public class Hotel extends Alojamiento {
 
@@ -75,7 +73,5 @@ public class Hotel extends Alojamiento {
     public String toString() {
         return ", cantidadDeHabitaciones=" + cantidadDeHabitaciones + ", numeroDeCamas=" + numeroDeCamas + ", cantidadDePisos=" + cantidadDePisos + ", precioDeHabitaciones=" + precioDeHabitaciones +  super.toString();
     }
-    
-    
     
 }

@@ -1,6 +1,4 @@
-
 package ejercicioextra3.interfaces;
-
 
 public interface ValorAgregadoDelGimnasio {
 

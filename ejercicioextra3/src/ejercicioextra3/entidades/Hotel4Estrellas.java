@@ -1,8 +1,6 @@
-
 package ejercicioextra3.entidades;
 
 import ejercicioextra3.enumeraciones.Gimnasio;
-
 
 public class Hotel4Estrellas extends Hotel {
 

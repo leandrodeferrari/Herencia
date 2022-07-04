@@ -1,11 +1,9 @@
-
 package ejercicioextra3.servicios;
 
 import ejercicioextra3.entidades.Alojamiento;
 import ejercicioextra3.entidades.Hotel;
 
-
-public class ServicioHotel extends ServicioAlojamiento {
+public class HotelServicio extends AlojamientoServicio {
 
     @Override
     public Hotel crearAlojamiento(){
@@ -26,7 +24,5 @@ public class ServicioHotel extends ServicioAlojamiento {
         return new Hotel(cantidadDeHabitacionesDelHotel, numeroDeCamasDelHotel, cantidadDePisosDelHotel, 0, alojamiento);
              
     }
-    
-    
     
 }

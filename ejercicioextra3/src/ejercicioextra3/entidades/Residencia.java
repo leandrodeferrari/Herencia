@@ -1,6 +1,4 @@
-
 package ejercicioextra3.entidades;
-
 
 public class Residencia extends ExtraHotelero {
 

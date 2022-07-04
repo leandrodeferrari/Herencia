@@ -1,4 +1,3 @@
-
 package ejercicioextra3;
 
 import ejercicioextra3.entidades.SistemaDeConsulta;
