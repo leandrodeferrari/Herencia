@@ -1,9 +1,7 @@
-
 package ejercicioextra4.entidades;
 
 import ejercicioextra4.enumeraciones.EstadoCivil;
 import ejercicioextra4.enumeraciones.Seccion;
-
 
 public class PersonalDeServicio extends Empleado {
 

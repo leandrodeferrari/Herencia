@@ -1,9 +1,7 @@
-
 package ejercicioextra4.entidades;
 
 import ejercicioextra4.enumeraciones.Departamento;
 import ejercicioextra4.enumeraciones.EstadoCivil;
-
 
 public class Profesor extends Empleado {
 
@@ -24,8 +22,6 @@ public class Profesor extends Empleado {
     public void setDepartamentoPerteneciente(Departamento departamentoPerteneciente) {
         this.departamentoPerteneciente = departamentoPerteneciente;
     }
-
-    
     
     @Override
     public String toString() {
