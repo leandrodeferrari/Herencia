@@ -1,10 +1,9 @@
-
 package ejercicioextra1.servicios;
 
 import ejercicioextra1.entidades.BarcoMotorizado;
 import ejercicioextra1.entidades.TransporteMaritimo;
 
-public class ServicioBarcoMotorizado extends ServicioTransporteMaritimo {
+public class BarcoMotorizadoServicio extends TransporteMaritimoServicio {
 
     @Override
     public BarcoMotorizado crearTransporte() {

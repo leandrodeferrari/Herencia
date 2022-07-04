@@ -3,7 +3,7 @@ package ejercicioextra1.servicios;
 import ejercicioextra1.entidades.TransporteMaritimo;
 import ejercicioextra1.entidades.Velero;
 
-public class ServicioVelero extends ServicioTransporteMaritimo {
+public class VeleroServicio extends TransporteMaritimoServicio {
 
     @Override
     public Velero crearTransporte() {

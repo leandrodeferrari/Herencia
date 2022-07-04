@@ -3,7 +3,7 @@ package ejercicioextra1.servicios;
 import ejercicioextra1.entidades.TransporteMaritimo;
 import java.util.Scanner;
 
-public class ServicioTransporteMaritimo {
+public class TransporteMaritimoServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 

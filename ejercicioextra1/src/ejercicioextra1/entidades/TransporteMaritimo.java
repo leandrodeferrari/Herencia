@@ -1,6 +1,4 @@
-
 package ejercicioextra1.entidades;
-
 
 public class TransporteMaritimo {
 

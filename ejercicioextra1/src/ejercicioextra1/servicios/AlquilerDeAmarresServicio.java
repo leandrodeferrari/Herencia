@@ -1,15 +1,10 @@
 package ejercicioextra1.servicios;
 
 import ejercicioextra1.interfaces.IMenu;
-import ejercicioextra1.entidades.AlquilerDeAmarres;
-import ejercicioextra1.entidades.BarcoMotorizado;
-import ejercicioextra1.entidades.TransporteMaritimo;
-import ejercicioextra1.entidades.Velero;
-import ejercicioextra1.entidades.YateDeLujo;
-import java.util.Date;
-import java.util.Scanner;
+import ejercicioextra1.entidades.*;
+import java.util.*;
 
-public class ServicioAlquilerDeAmarres implements IMenu {
+public class AlquilerDeAmarresServicio implements IMenu {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
@@ -68,19 +63,19 @@ public class ServicioAlquilerDeAmarres implements IMenu {
 
             case 1:
 
-                ServicioVelero servicioVelero = new ServicioVelero();
+                VeleroServicio servicioVelero = new VeleroServicio();
                 Velero velero = servicioVelero.crearTransporte();
                 return velero;
 
             case 2:
 
-                ServicioBarcoMotorizado servicioBarcoMotorizado = new ServicioBarcoMotorizado();
+                BarcoMotorizadoServicio servicioBarcoMotorizado = new BarcoMotorizadoServicio();
                 BarcoMotorizado barcoMotorizado = servicioBarcoMotorizado.crearTransporte();
                 return barcoMotorizado;
 
             case 3:
 
-                ServicioYateDeLujo servicioYateDeLujo = new ServicioYateDeLujo();
+                YateDeLujoServicio servicioYateDeLujo = new YateDeLujoServicio();
                 YateDeLujo yateDeLujo = servicioYateDeLujo.crearTransporte();
                 return yateDeLujo;
 
@@ -143,12 +138,12 @@ public class ServicioAlquilerDeAmarres implements IMenu {
         precioBase = calcularAlquilerBase(alquiler.getTransporte().getEsloraEnMetros(), diasEntreFechas);
 
         precioSegunTransporte = calculcarPrecioAlquilerSegunTransporte(alquiler.getTransporte());
-        
+
         alquilerTotal = precioBase + precioSegunTransporte;
-        
+
         System.out.println("El precio final de su alquiler es: " + alquilerTotal);;
 //        System.out.println(alquiler);
-        
+
     }
 
     @Override

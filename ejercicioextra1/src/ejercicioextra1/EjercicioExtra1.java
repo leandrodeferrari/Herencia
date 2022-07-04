@@ -1,6 +1,6 @@
 package ejercicioextra1;
 
-import ejercicioextra1.servicios.ServicioAlquilerDeAmarres;
+import ejercicioextra1.servicios.AlquilerDeAmarresServicio;
 
 public class EjercicioExtra1 {
 
@@ -30,7 +30,7 @@ public class EjercicioExtra1 {
         // los métodos necesarios que permitan al usuario elegir el barco que quiera alquilar y 
         // mostrarle el precio final de su alquiler.
         
-        ServicioAlquilerDeAmarres servicio = new ServicioAlquilerDeAmarres();
+        AlquilerDeAmarresServicio servicio = new AlquilerDeAmarresServicio();
         servicio.crearMenuAlquilerDeAmarres();
         
     }

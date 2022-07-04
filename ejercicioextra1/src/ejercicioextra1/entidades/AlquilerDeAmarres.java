@@ -1,4 +1,3 @@
-
 package ejercicioextra1.entidades;
 
 import java.util.Date;
