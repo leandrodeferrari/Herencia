@@ -1,15 +1,14 @@
 package ejercicio2.servicios;
 
-
 import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Lavadora;
 
-public class ServicioLavadora extends ServicioElectrodomestico{
+public class LavadoraServicio extends ElectrodomesticoServicio{
 
     @Override
     public Lavadora crearElectrodomestico(){
         
-        ServicioElectrodomestico servicioElectrodomestico = new ServicioElectrodomestico();
+        ElectrodomesticoServicio servicioElectrodomestico = new ElectrodomesticoServicio();
         Electrodomestico electrodomestico = servicioElectrodomestico.crearElectrodomestico();
         double carga;
         

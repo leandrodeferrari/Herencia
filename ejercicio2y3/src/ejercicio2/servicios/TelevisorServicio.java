@@ -3,12 +3,12 @@ package ejercicio2.servicios;
 import ejercicio2.entidades.Electrodomestico;
 import ejercicio2.entidades.Televisor;
 
-public class ServicioTelevisor extends ServicioElectrodomestico {
+public class TelevisorServicio extends ElectrodomesticoServicio {
 
     @Override
     public Televisor crearElectrodomestico() {
 
-        ServicioElectrodomestico servicioElectrodomestico = new ServicioElectrodomestico();
+        ElectrodomesticoServicio servicioElectrodomestico = new ElectrodomesticoServicio();
         Electrodomestico electrodomestico = servicioElectrodomestico.crearElectrodomestico();
         double resolucionDePulgadas;
         boolean tieneSintonizadorTdt;

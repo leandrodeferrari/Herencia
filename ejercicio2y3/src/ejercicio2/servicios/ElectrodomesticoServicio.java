@@ -1,11 +1,10 @@
 package ejercicio2.servicios;
 
 import ejercicio2.entidades.Electrodomestico;
-import ejercicio2.enumeraciones.Color;
-import ejercicio2.enumeraciones.Letra;
+import ejercicio2.enumeraciones.*;
 import java.util.Scanner;
 
-public class ServicioElectrodomestico {
+public class ElectrodomesticoServicio {
 
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
     
@@ -60,7 +59,7 @@ public class ServicioElectrodomestico {
 
         Electrodomestico electrodomestico = new Electrodomestico();
 
-        double precio, peso;
+        double peso;
         Color color;
         Letra consumoEnergetico;
 

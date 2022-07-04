@@ -1,7 +1,6 @@
 package ejercicio2.entidades;
 
-import ejercicio2.enumeraciones.Color;
-import ejercicio2.enumeraciones.Letra;
+import ejercicio2.enumeraciones.*;
 
 public class Televisor extends Electrodomestico {
 

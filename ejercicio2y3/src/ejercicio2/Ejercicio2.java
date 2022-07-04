@@ -1,12 +1,8 @@
 package ejercicio2;
 
-import ejercicio2.entidades.Electrodomestico;
-import ejercicio2.entidades.Lavadora;
-import ejercicio2.entidades.Televisor;
-import ejercicio2.servicios.ServicioLavadora;
-import ejercicio2.servicios.ServicioTelevisor;
-import java.util.ArrayList;
-import java.util.Scanner;
+import ejercicio2.entidades.*;
+import ejercicio2.servicios.*;
+import java.util.*;
 
 public class Ejercicio2 {
 
@@ -144,14 +140,14 @@ public class Ejercicio2 {
 
                 case 1:
 
-                    ServicioLavadora servicioLavadora = new ServicioLavadora();
+                    LavadoraServicio servicioLavadora = new LavadoraServicio();
                     Lavadora lavadora = servicioLavadora.crearElectrodomestico();
                     listaDe4Electrodomesticos.add(lavadora);
                     break;
 
                 case 2:
 
-                    ServicioTelevisor servicioTelevisor = new ServicioTelevisor();
+                    TelevisorServicio servicioTelevisor = new TelevisorServicio();
                     Televisor televisor = servicioTelevisor.crearElectrodomestico();
                     listaDe4Electrodomesticos.add(televisor);
                     break;
